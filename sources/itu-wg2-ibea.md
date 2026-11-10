@@ -10,7 +10,7 @@
 | Document ID | To be assigned by TSB |
 | Source | Xinghua Zhao, independent expert (China) |
 | Contact | zhaoxinghua07@126.com |
-| Date | 2026-11-10 (revision v0.1.1) |
+| Date | 2026-11-10 (revision v0.1.3) |
 | Related FG work | Terms of Reference §3.4 (Security assessment criteria and benchmarks), §4.2 (Architectures for identity, trust, agent discovery and interoperability), §4.4 (Technical-policy and machine-readable trust metadata) |
 | Pages | 4–5 (estimated; typeset length to be confirmed) |
 | IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
@@ -51,7 +51,7 @@ Three properties follow, and are the reason to standardise this rather than leav
 
 ## 3. Mapping to the Terms of Reference
 
-The mapping below uses the public Terms of Reference (https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx), and refers to clause numbers rather than to Annex A item identifiers.
+The mapping below uses the public Terms of Reference (https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx), and refers to clause numbers rather than to an annex item numbering.
 
 | ToR clause | Kind of work | What this contribution supplies |
 |---|---|---|
@@ -69,11 +69,6 @@ Out of scope: cryptographic profile selection, PKI operational practice, and the
 | W2 | State that a gate which cannot produce the record **after the fact** does not satisfy the enforcement function, however well it performs in real time. | A test that a benchmark can apply without inspecting any vendor's implementation. | Enforcement remains measured by block rate alone. |
 | W3 | Indicate the **intended host** — §4.2 architecture text, §4.4 metadata analysis, or a working-group draft. | Text prepared in the right form for the second meeting (Geneva, 26–27 January 2027). | Content remains available; form is adapted once the host is known. |
 
-## 5. Boundary with the terminology contribution
-
-A separate input document from the same source proposes three coordination terms — Registry, Evidence, Gates — with record-completeness conditions. The boundaries are stated so that neither document claims the other's subject matter: This contribution is the narrower, enforcement-side reading of the same idea: it does not restate the terms, and it can be read alone. Where the two overlap, the companion document governs the terminology; this document governs what a gate must emit.
-
-
 **Non-duplication (ToR §2, Rec. ITU-T A.7).** This contribution does not reopen
 work already under way in ITU-T SG17 or in the Focus Group. It supplies a
 record-level vocabulary and check on top of the threads already published in the
@@ -90,11 +85,15 @@ Further references, with permanent links:
 - themes#59 — https://github.com/FG-TIDA/themes/issues/59
 - themes#60 — https://github.com/FG-TIDA/themes/issues/60
 
+## 5. Boundary with the terminology contribution
+
+A separate input document from the same source proposes three coordination terms — Registry, Evidence, Gates — with record-completeness conditions. The boundaries are stated so that neither document claims the other's subject matter. This contribution is the narrower, enforcement-side reading of the same idea: it does not restate the terms, and it can be read alone. Where the two overlap, the companion document governs the terminology; this document governs what a gate must emit.
+
 ## 6. References and attribution
 
 - ITU-T FG-TIDA, Terms of Reference — public text at https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx (clauses §3.4, §4.2, §4.4 cited above).
 - ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, Geneva, 8 October 2026 (DMS Date 2026-10-05; posted 2026-10-19) — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
-- No public repository location is asserted; no run result is claimed.
+- No run result is claimed; the contribution repository named in Annex B is the only public location asserted for the checker.
 
 *No trademark, no DOI, no canonical identifier is asserted in this document. Views are those of the named individual expert and do not represent any organisation.*
 
@@ -104,7 +103,7 @@ Submitted **for action**, no later than **23 November 2026**, in accordance with
 
 ---
 
-## Annex — Decision record, as a field list
+## Annex A — Decision record, as a field list
 
 ```json
 {"decision":{"gate":"gw-3","at":"2026-11-09T10:12:00Z","outcome":"allow"},
@@ -120,7 +119,7 @@ Completeness condition, stated so a third party can apply it: a record fails if 
 
 Boundary sentence: *a record satisfying this condition is complete, not correct; completeness is not a certification, an endorsement, or a regulatory acceptance.*
 
-## Annex C — act-content binding: the record must identify the act
+## Annex B — act-content binding: the record must identify the act
 
 The three-field record answers *who acted, on whose authority, and what
 changed*. One property is missing from that picture: the record can name the
@@ -128,16 +127,18 @@ operation type and the resource class without identifying **the act it
 decided**, so a record can be replayed onto a different act of the same type
 and no check fails.
 
-## Definition
+### Definition
 
 Mapping to the three-field record of the main text: `effect.operation` → `action`; `effect.resource` → `resource`; `actor` → `principal`; the remaining act-describing fields are those the Focus Group agrees describe the act. The binding digest is stored next to the decision record, not inside it.
+
+**Scope of the digest.** The digest covers the act-describing fields listed above. It does not cover the decision record's `decision`, `actor`, `authority` or `effect` fields; those are the subject of the WG1 three-field record and are not bound by this digest. A record can satisfy act-content binding while those fields are absent or wrong; the two properties are complementary, not substitutes.
 
 A decision record satisfies **act-content binding** if and only if:
 
 1. it contains the act-describing fields of the act it decided — at minimum
    `action`, `resource`, `parameters`, `principal`, `audience` — with
    instance-level values (not class-level placeholders such as `*` or `any`);
-2. it carries a digest computed over the normalized form of those fields under
+2. it carries a digest computed over the normalised form of those fields under
    the byte rule below;
 3. a verifier recomputes the digest from the fields the record presents and the
    values match;
@@ -155,19 +156,19 @@ insignificant whitespace; strings, integers, booleans, null, arrays and objects
 are admitted; floating-point numbers are rejected, because their rendering
 differs between languages.
 
-## Check
+### Check
 
 A single-file, standard-library-only checker (`act_content_check.py`) is
-provided in this package as `tools/act_content_check.py`, with `record.json`
-and `expected-output.txt`; the same files are mirrored in the contribution
+provided with this contribution in the WG2 directory of the package, together
+with `record.json` and `expected-output.txt`; the same files are mirrored in the contribution
 repository (https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026). It ships with seven self-test vectors and
 uses stable exit codes: 0 satisfied; 1 no binding object or an assignable UUID
 only; 2 substitution detected (missing field, class-level placeholder, digest
-mismatch); 3 value not canonicalizable (floating-point); 4 invalid JSON.
+mismatch); 3 value not canonicalisable (floating-point); 4 invalid JSON.
 
-## Non-goals
+### Non-goals
 
 The property does not cover the decision value itself (`outcome`,
-`consulted`), execution identity, TOCTOU, authorization validity or evidence
+`consulted`), execution identity, TOCTOU, authorisation validity or evidence
 quality. If the group wishes the decision value to be bound as well, that is a
 separate property.
