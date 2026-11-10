@@ -15,7 +15,7 @@
 | Pages | 5–6 (estimated; typeset length to be confirmed) |
 | IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
 
-> Status: content complete. Submission for the meeting is through the Focus Group's GitHub space using the ITU-T FG contribution template (Circular T25-TSB-CIR-0179, paragraph on contributions); the TIDA DataTracker is the FG's record for work items and is not the entry point for this contribution.
+> Status: content complete. Submission for the meeting is through the Focus Group's GitHub space using the ITU-T FG contribution template (Circular T25-TSB-CIR-0179).
 
 ---
 
@@ -33,8 +33,8 @@ This contribution proposes no new technology and no new mandate. It proposes a *
 
 | Primitive | Working definition (proposed for the FG glossary) | What it makes possible |
 |---|---|---|
-| **Registry** | A queryable, versioned record of *which* actors, artefacts and decisions exist, together with who registered them, when, and on what basis. | Any party can ask "does this actor exist, who owns it, which version is current" without bilateral agreements. |
-| **Evidence** | A record that a *specific action* occurred, carrying at minimum a source, a timestamp, and a stated attribution. | Claims can be checked after the fact instead of being taken on trust. |
+| **Registry** | A queryable, versioned record of which actors, artefacts and decisions exist, with an identifier, an owner, a version and the basis on which registration was made (the basis is recorded, not verified by the check). | Any party can ask "does this actor exist, who owns it, which version is current" without bilateral agreements. |
+| **Evidence** | A record that a *specific action* occurred, carrying at minimum a source, a date (YYYY-MM-DD), and a stated attribution. | Claims can be checked after the fact instead of being taken on trust. |
 | **Gates** | A defined transition point where a change requires a decision: trigger → assessment → authorisation → review, with machine-proposed and human-authorised steps recorded. | Evolution of an agent or a model becomes an auditable event rather than a silent update. |
 
 Three properties are intended and should be tested by the group:
@@ -81,11 +81,20 @@ FG's GitHub space; where a thread already covers a point, this document defers t
 it. The Focus Group and the SG17 Chair remain the judges of whether any overlap
 exists, under ToR §2.
 
+
+Further references, with permanent links:
+
+- themes#5 — https://github.com/FG-TIDA/themes/issues/5
+- themes#42 — https://github.com/FG-TIDA/themes/issues/42
+- themes#43 — https://github.com/FG-TIDA/themes/issues/43
+- themes#59 — https://github.com/FG-TIDA/themes/issues/59
+- themes#60 — https://github.com/FG-TIDA/themes/issues/60
+
 ## 5. References and attribution
 
 - ITU-T FG-TIDA, Terms of Reference — public text at https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx (clauses §3.1, §3.3, §4.1, §4.3 cited above). The TIES-restricted document [295-PLEN] is cited by document number only and is not relied on for any quotation.
-- ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, Geneva, 8 October 2026 — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
-- **DEUSPROOF** — acknowledged for an exchange on endpoint-level evidence that informed the framing of Annex B. No validation result is claimed on DEUSPROOF's behalf beyond what Annex B states.
+- ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, Geneva, 8 October 2026 (DMS Date 2026-10-05; posted 2026-10-19) — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
+- **An independent endpoint operator** — acknowledged for an exchange on endpoint-level evidence that informed the framing of Annex B. The operator is not named here and no validation result is claimed on its behalf.
 - Reproducible material: the three record-completeness checks in Annex A are specified at the level of field presence and field semantics; a formal schema is proposed as a next step. **No public repository location is asserted at the time of submission**; see Annex B.
 
 *No trademark, no DOI, no canonical identifier is asserted in this document. Views are those of the named individual expert and do not represent any organisation.*
@@ -116,11 +125,10 @@ This document is submitted **for action**, no later than **23 November 2026**, i
 A record exercising all three, in the form used for the checks described in Annex B:
 
 ```json
-{"subject":{"id":"agent-01","identity":{"owner":"org-a","version":"1.2"}},
- "evidence":{"required":true,"items":[{"source":"pol-42","date":"2026-11-09","attribution":"org-a"}]},
+{"subject":{"identifier":"agent-01","identity":{"owner":"org-a","version":"1.2"}},
+ "evidence":{"required":true,"items":[{"source":"pol-42","date":"2026-11-09","stated attribution":"org-a"}]},
  "governance":{"gates":[{"id":"release-7","assessment":{"by":"tool-x","at":"2026-11-09"},
-                         "human_authorisation":{"by":"reviewer-y","at":"2026-11-09"}}],
-               "audit":{"logging":true,"immutable":true}}}
+                         "human_authorisation":{"by":"reviewer-y","at":"2026-11-09"}}]}}
 ```
 
 The three conditions are checked against one record in a single pass; the failing primitive is reported with the prefix of its term. Exit status: `0` when all three conditions hold, non-zero when at least one fails.
@@ -129,9 +137,9 @@ Boundary sentence, to be carried with every result: *a passing result means the 
 
 ## Annex B — Reproducibility and its current limit
 
-- The three checks in Annex A are specified above at the level of field presence and field semantics, so that an independent party can re-implement them without further material; the record format is the JSON example shown, and the exit-status convention is stated with it. **No public repository or script location is asserted at the time of submission**; adding one is a pending action, and until then no claim of a published artefact is made.
+- The three checks in Annex A are specified above at the level of field presence and field semantics, so that an independent party can re-implement them without further material; the record format is the JSON example shown, and the exit-status convention is stated with it. The record format and exit-status convention are stated here; a runnable implementation of the checks accompanies the WG2 contribution (`tools/act_content_check.py`), and the public location is the contribution repository (https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026), tag `v1.2`.
 - **Known limitation, stated rather than hidden:** the record-completeness check does not verify signature authenticity, and no independent endpoint used during preparation is fixed to a permanent address. The result is therefore reproducible in method, not yet reproducible against a pinned endpoint.
-- Environment used during preparation: offline execution, no network dependency, standard library only.
+- The checks are specified at record level; the runnable implementation accompanies the WG2 contribution (tools/act_content_check.py).
 
 ## Annex C — terminology boundaries
 
