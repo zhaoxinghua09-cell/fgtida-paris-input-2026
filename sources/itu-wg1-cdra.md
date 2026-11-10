@@ -13,7 +13,7 @@
 | Date | 2026-11-10 (revision v0.3.1) |
 | Related FG work | Terms of Reference §3.1 (Terminology and definitions), §4.1 (Use cases and requirements analysis), §4.3 (Trust framework(s) and lifecycle management) |
 | Pages | 5–6 (estimated; typeset length to be confirmed) |
-| IPR | To be completed per the ITU-T FG contribution template |
+| IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
 
 > Status: content complete. Submission for the meeting is through the Focus Group's GitHub space using the ITU-T FG contribution template (Circular T25-TSB-CIR-0179, paragraph on contributions); the TIDA DataTracker is the FG's record for work items and is not the entry point for this contribution.
 
@@ -73,10 +73,18 @@ Each request is written so that it can be accepted, amended or declined at the m
 | R2 | Enter the three minimal use cases into the use-case work (§4.1), attributed to this contribution. | Three entries usable as-is, each tied to one failure mode. | Cases stay in §2.1 and can be re-submitted in whatever register format the group decides on. |
 | R3 | Indicate the **intended host** for the lifecycle narrative — §4.3 framework text or a working-group draft. | Text prepared in the right form for the second meeting. | Narrative remains available; form is adapted once the host is known. |
 
+
+**Non-duplication (ToR §2, Rec. ITU-T A.7).** This contribution does not reopen
+work already under way in ITU-T SG17 or in the Focus Group. It supplies a
+record-level vocabulary and check on top of the threads already published in the
+FG's GitHub space; where a thread already covers a point, this document defers to
+it. The Focus Group and the SG17 Chair remain the judges of whether any overlap
+exists, under ToR §2.
+
 ## 5. References and attribution
 
 - ITU-T FG-TIDA, Terms of Reference — public text at https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx (clauses §3.1, §3.3, §4.1, §4.3 cited above). The TIES-restricted document [295-PLEN] is cited by document number only and is not relied on for any quotation.
-- ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, 5 October 2026 — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
+- ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, Geneva, 8 October 2026 — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
 - **DEUSPROOF** — acknowledged for an exchange on endpoint-level evidence that informed the framing of Annex B. No validation result is claimed on DEUSPROOF's behalf beyond what Annex B states.
 - Reproducible material: the three record-completeness checks in Annex A are specified at the level of field presence and field semantics; a formal schema is proposed as a next step. **No public repository location is asserted at the time of submission**; see Annex B.
 
@@ -125,7 +133,7 @@ Boundary sentence, to be carried with every result: *a passing result means the 
 - **Known limitation, stated rather than hidden:** the record-completeness check does not verify signature authenticity, and no independent endpoint used during preparation is fixed to a permanent address. The result is therefore reproducible in method, not yet reproducible against a pinned endpoint.
 - Environment used during preparation: offline execution, no network dependency, standard library only.
 
-# Annex — terminology boundaries
+## Annex C — terminology boundaries
 
 This annex records the boundaries that travel with the three terms, so that a
 glossary entry cannot be read as a technology commitment.
