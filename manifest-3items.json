@@ -1,23 +1,23 @@
 [
  {
   "id": "itu-wg1-cdra",
-  "docx": "work/itu-paris-3items\\itu-wg1-cdra\\24-ITU-Paris-InputDoc-v0.3.1-FG-DOCX.docx",
-  "bytes": 43205,
-  "sha256": "2c32d9c41e729d71dc2e5f6b8cb675be07254addd98987b09b954285e832073f",
-  "title": "Lifecycle Trust for Agentic AI: A Registry–Evidence–Gates Coordination Framework"
+  "docx": "work/itu-paris-3items\\itu-wg1-cdra\\FG-TIDA-WG1-Cdra-InputDoc-v0.3.2.docx",
+  "bytes": 43398,
+  "sha256": "18699f246dd3aeac621a1b02139013da5d9bd8c4d0243b461e02e0d283c9146b",
+  "source_sha256": "2bdb89be8ededa299a6fa07b304f62ee29724169e83b6e412c2c74bbd27f5e3d"
  },
  {
   "id": "itu-wg2-ibea",
-  "docx": "work/itu-paris-3items\\itu-wg2-ibea\\47-ITU-Paris-WG2-InputDoc-v0.1-FG-DOCX.docx",
-  "bytes": 42392,
-  "sha256": "a229ae38e3b7b740cae5c1e8e4c7c63c27b6e28972a9b902ef9c9edde9e8d0e8",
-  "title": "Binding an Action to an Accountable Actor: What a Gate Must Carry"
+  "docx": "work/itu-paris-3items\\itu-wg2-ibea\\FG-TIDA-WG2-Ibea-InputDoc-v0.1.2.docx",
+  "bytes": 42635,
+  "sha256": "fd9bf653522c8f17e4e663a9ab8ca523e199ac804a5214263d8dcaa20dfe0cd3",
+  "source_sha256": "bda008641b7c72980c727d8abc83cc86df61ba12964e7a280cffe0426cfaf54f"
  },
  {
   "id": "itu-wg0-usecases",
-  "docx": "work/itu-paris-3items\\itu-wg0-usecases\\48-ITU-Paris-WG0-UseCases-v0.1-FG-DOCX.docx",
-  "bytes": 43434,
-  "sha256": "ef3ba3d19796de7ea6d75d61452f64740121d38f3f8ab452505c1522cb8c2059",
-  "title": "FG-TIDA Use Case Proposals (3) — Delegated Authority, Gated Update, Mid-Session Revocation"
+  "docx": "work/itu-paris-3items\\itu-wg0-usecases\\FG-TIDA-WG0-UseCases-v0.1.2.docx",
+  "bytes": 43698,
+  "sha256": "6efaaad945ccd1d3d23afeb12f0c18829b76f9cfdc9dadf6d2d57385a31e6152",
+  "source_sha256": "c97f8f7481918c3a1e8d85644e2bad96a9327e9d4cbafae2cb34e2a630c4409a"
  }
 ]
