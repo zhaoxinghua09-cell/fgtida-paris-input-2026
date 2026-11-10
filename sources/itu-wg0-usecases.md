@@ -13,9 +13,10 @@
 | Date | 2026-11-10 (revision v0.1.1) |
 | Related FG work | Terms of Reference §3.3 (Use cases), §4.1 (Use cases and requirements analysis) |
 | Pages | 6–7 (estimated; typeset length to be confirmed) |
-| IPR | To be completed per the ITU-T FG contribution template |
+| IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
 
-> Each proposal below follows the field structure of the FG's `FG-TIDA Use Case Proposal` template, so that it can be entered in the use-case register without restructuring. Fields the template requires are all completed; where a field does not apply, the reason is stated rather than left blank.
+> Each proposal below follows the field structure of the FG's `FG-TIDA Use Case Proposal` template
+(https://github.com/FG-TIDA/use-cases), so that it can be entered in the use-case register without restructuring. Fields the template requires are all completed; where a field does not apply, the reason is stated rather than left blank.
 
 ## What is asked of the FG
 
@@ -60,7 +61,7 @@
 | Hospital | Laboratory | Accept referrals prepared with delegated agent assistance | Bilateral service agreement |
 | Laboratory | Intake system | Admit the referral into the queue | Internal operating procedure |
 
-**Cross-border?** No — single jurisdiction in this instance; a cross-border variant is noted under §7.
+**Cross-border?** No — single jurisdiction in this instance; a cross-border variant is noted in the Duplication check section.
 **Embodied?** No.
 **Agent action type:** Read-only ✔ (the consequential act, transmission, is performed by the hospital system, not the agent).
 **Crosses organisational boundary?** Yes — hospital to external laboratory.
@@ -93,6 +94,14 @@
 
 - **Success criteria:** the laboratory can answer §2's decision question from the referral package alone, with no call-back.
 - **Measurable metric:** proportion of referrals admitted without human verification, and proportion of later disputes resolved from the package alone.
+
+
+**Non-duplication (ToR §2, Rec. ITU-T A.7).** This contribution does not reopen
+work already under way in ITU-T SG17 or in the Focus Group. It supplies a
+record-level vocabulary and check on top of the threads already published in the
+FG's GitHub space; where a thread already covers a point, this document defers to
+it. The Focus Group and the SG17 Chair remain the judges of whether any overlap
+exists, under ToR §2.
 
 ## 7. Duplication check
 
@@ -261,7 +270,7 @@
 
 | # | Type | Requirement description | Criticality |
 |---|---|---|---|
-| 1 | Technical | The relying party must be able to learn of a revocation within a bounded interval, stated as a number. | Must |
+| 1 | Technical | The relying party must be able to learn of a revocation within a bounded interval (for example, within 15 minutes; the Focus Group may set the value). | Must |
 | 2 | Technical | A revoked agent's subsequent operations must fail closed, not open. | Must |
 | 3 | Technical | The relying party must be able to show, after the fact, whether it knew of the revocation at the time it acted. | Must |
 | 4 | Business | The user must be able to tell, in plain language, what the agent did before revocation took effect. | Should |
