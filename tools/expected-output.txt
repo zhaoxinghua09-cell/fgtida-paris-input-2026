@@ -1,0 +1,12 @@
+$ python act_content_check.py record.json
+exit=0 act-content binding satisfied
+
+$ python act_content_check.py --selftest
+[PASS] valid                    exit=0 expected=0  act-content binding satisfied
+[PASS] substituted-act          exit=2 expected=2  binding mismatch: record does not bind the act content it presents
+[PASS] uuid-only                exit=1 expected=1  assignable label only (uuid) is not act-content binding
+[PASS] missing-principal        exit=2 expected=2  act is missing act-describing field(s): principal
+[PASS] class-level-placeholder  exit=2 expected=2  act value is a class-level placeholder; instance-level values are required
+[PASS] float-value              exit=3 expected=3  floating-point value cannot be canonicalized under the byte rule
+[PASS] reordered-fields         exit=0 expected=0  act-content binding satisfied
+SELFTEST OK (7 vectors)
