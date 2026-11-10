@@ -10,7 +10,7 @@
 | Document ID | To be assigned by TSB |
 | Source | Xinghua Zhao, independent expert (China) |
 | Contact | zhaoxinghua07@126.com |
-| Date | 2026-11-10 (revision v0.1.1) |
+| Date | 2026-11-10 (revision v0.1.3) |
 | Related FG work | Terms of Reference §3.3 (Use cases), §4.1 (Use cases and requirements analysis) |
 | Pages | 6–7 (estimated; typeset length to be confirmed) |
 | IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
