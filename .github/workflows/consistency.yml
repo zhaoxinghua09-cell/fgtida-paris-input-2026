@@ -1,0 +1,30 @@
+name: consistency
+
+on:
+  push:
+    branches: [ "fix/**" ]
+  pull_request:
+
+jobs:
+  consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Positive check
+        run: python tools/check_consistency.py
+      - name: Negative control (a corrupted manifest must FAIL)
+        run: |
+          python - <<'EOF'
+          import json
+          m = json.load(open('manifest-3items.json'))
+          m['items'][0]['sha256'] = '0' * 64
+          json.dump(m, open('/tmp/manifest-bad.json', 'w'))
+          EOF
+          if python tools/check_consistency.py --manifest /tmp/manifest-bad.json; then
+            echo "NEGATIVE CONTROL FAILED: corrupted manifest passed"; exit 1
+          else
+            echo "NEGATIVE CONTROL OK: corrupted manifest rejected"
+          fi
