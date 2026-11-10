@@ -15,8 +15,8 @@
 | Pages | 6–7 (estimated; typeset length to be confirmed) |
 | IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
 
-> Each proposal below follows the field structure of the FG's `FG-TIDA Use Case Proposal` template
-(https://github.com/FG-TIDA/use-cases), so that it can be entered in the use-case register without restructuring. Fields the template requires are all completed; where a field does not apply, the reason is stated rather than left blank.
+> Each proposal below follows the field structure of the FG's published use-case proposal template (
+the fields as listed below), so that the content can be re-entered in whatever register the Focus Group adopts without changing the substance. Fields the template requires are all completed; where a field does not apply, the reason is stated rather than left blank.
 
 ## What is asked of the FG
 
@@ -78,7 +78,7 @@
 | Runtime Enforcement (Control Plane) | ✔ | | The boundary decision is made at the laboratory's intake. |
 | Embodied AI Identity and Trust | | | Not applicable — no physical actuation. |
 
-**Related theme proposals:** none linked at submission time.
+**Related theme proposals:** themes#42, themes#43, themes#59, themes#60 (see References).
 
 ## 5. Requirements
 
@@ -112,6 +112,15 @@ exists, under ToR §2.
 
 - **Pilot status:** Hypothetical.
 - **Reference implementation:** n/a.
+
+
+Further references, with permanent links:
+
+- themes#5 — https://github.com/FG-TIDA/themes/issues/5
+- themes#42 — https://github.com/FG-TIDA/themes/issues/42
+- themes#43 — https://github.com/FG-TIDA/themes/issues/43
+- themes#59 — https://github.com/FG-TIDA/themes/issues/59
+- themes#60 — https://github.com/FG-TIDA/themes/issues/60
 
 ## 9. IP and confidentiality
 
@@ -271,7 +280,7 @@ exists, under ToR §2.
 | # | Type | Requirement description | Criticality |
 |---|---|---|---|
 | 1 | Technical | The relying party must be able to learn of a revocation within a bounded interval (for example, within 15 minutes; the Focus Group may set the value). | Must |
-| 2 | Technical | A revoked agent's subsequent operations must fail closed, not open. | Must |
+| 2 | Technical | A revoked agent's subsequent operations should be reported as denied in the record; whether a deployment fails closed is a deployment policy decision, outside this proposal. | Must |
 | 3 | Technical | The relying party must be able to show, after the fact, whether it knew of the revocation at the time it acted. | Must |
 | 4 | Business | The user must be able to tell, in plain language, what the agent did before revocation took effect. | Should |
 | 5 | Legal | Records of revocation and of actions taken after it must satisfy both jurisdictions' evidentiary rules. | Must |
