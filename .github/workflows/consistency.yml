@@ -38,7 +38,7 @@ jobs:
           python - <<'PY'
           import json, subprocess, sys
           rec = json.load(open('record.json'))
-          rec['effect']['operation'] = 'modified-after-signing'
+          rec['act']['resource'] = 'model:fraud-v9'
           json.dump(rec, open('/tmp/tampered.json', 'w'))
           rc = subprocess.call([sys.executable, 'act_content_check.py', '/tmp/tampered.json'])
           if rc == 0:
