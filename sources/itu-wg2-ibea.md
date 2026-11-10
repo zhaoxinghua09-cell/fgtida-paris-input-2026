@@ -69,9 +69,9 @@ Out of scope: cryptographic profile selection, PKI operational practice, and the
 | W2 | State that a gate which cannot produce the record **after the fact** does not satisfy the enforcement function, however well it performs in real time. | A test that a benchmark can apply without inspecting any vendor's implementation. | Enforcement remains measured by block rate alone. |
 | W3 | Indicate the **intended host** — §4.2 architecture text, §4.4 metadata analysis, or a working-group draft. | Text prepared in the right form for the second meeting (Geneva, 26–27 January 2027). | Content remains available; form is adapted once the host is known. |
 
-## 5. Relationship to the companion contribution on Registry–Evidence–Gates
+## 5. Boundary with the terminology contribution
 
-A separate input document from the same source proposes three coordination terms — Registry, Evidence, Gates — with record-completeness conditions. This contribution is the narrower, enforcement-side reading of the same idea: it does not restate the terms, and it can be read alone. Where the two overlap, the companion document governs the terminology; this document governs what a gate must emit.
+A separate input document from the same source proposes three coordination terms — Registry, Evidence, Gates — with record-completeness conditions. The boundaries are stated so that neither document claims the other's subject matter: This contribution is the narrower, enforcement-side reading of the same idea: it does not restate the terms, and it can be read alone. Where the two overlap, the companion document governs the terminology; this document governs what a gate must emit.
 
 
 **Non-duplication (ToR §2, Rec. ITU-T A.7).** This contribution does not reopen
@@ -81,10 +81,19 @@ FG's GitHub space; where a thread already covers a point, this document defers t
 it. The Focus Group and the SG17 Chair remain the judges of whether any overlap
 exists, under ToR §2.
 
+
+Further references, with permanent links:
+
+- themes#5 — https://github.com/FG-TIDA/themes/issues/5
+- themes#42 — https://github.com/FG-TIDA/themes/issues/42
+- themes#43 — https://github.com/FG-TIDA/themes/issues/43
+- themes#59 — https://github.com/FG-TIDA/themes/issues/59
+- themes#60 — https://github.com/FG-TIDA/themes/issues/60
+
 ## 6. References and attribution
 
 - ITU-T FG-TIDA, Terms of Reference — public text at https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx (clauses §3.4, §4.2, §4.4 cited above).
-- ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, Geneva, 8 October 2026 — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
+- ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, Geneva, 8 October 2026 (DMS Date 2026-10-05; posted 2026-10-19) — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
 - No public repository location is asserted; no run result is claimed.
 
 *No trademark, no DOI, no canonical identifier is asserted in this document. Views are those of the named individual expert and do not represent any organisation.*
@@ -121,6 +130,8 @@ and no check fails.
 
 ## Definition
 
+Mapping to the three-field record of the main text: `effect.operation` → `action`; `effect.resource` → `resource`; `actor` → `principal`; the remaining act-describing fields are those the Focus Group agrees describe the act. The binding digest is stored next to the decision record, not inside it.
+
 A decision record satisfies **act-content binding** if and only if:
 
 1. it contains the act-describing fields of the act it decided — at minimum
@@ -147,8 +158,9 @@ differs between languages.
 ## Check
 
 A single-file, standard-library-only checker (`act_content_check.py`) is
-provided in the contribution repository
-(https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026). It ships with seven self-test vectors and
+provided in this package as `tools/act_content_check.py`, with `record.json`
+and `expected-output.txt`; the same files are mirrored in the contribution
+repository (https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026). It ships with seven self-test vectors and
 uses stable exit codes: 0 satisfied; 1 no binding object or an assignable UUID
 only; 2 substitution detected (missing field, class-level placeholder, digest
 mismatch); 3 value not canonicalizable (floating-point); 4 invalid JSON.
