@@ -13,7 +13,7 @@
 | Date | 2026-11-10 (revision v0.1.1) |
 | Related FG work | Terms of Reference §3.4 (Security assessment criteria and benchmarks), §4.2 (Architectures for identity, trust, agent discovery and interoperability), §4.4 (Technical-policy and machine-readable trust metadata) |
 | Pages | 4–5 (estimated; typeset length to be confirmed) |
-| IPR | To be completed per the ITU-T FG contribution template |
+| IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
 
 ---
 
@@ -73,10 +73,18 @@ Out of scope: cryptographic profile selection, PKI operational practice, and the
 
 A separate input document from the same source proposes three coordination terms — Registry, Evidence, Gates — with record-completeness conditions. This contribution is the narrower, enforcement-side reading of the same idea: it does not restate the terms, and it can be read alone. Where the two overlap, the companion document governs the terminology; this document governs what a gate must emit.
 
+
+**Non-duplication (ToR §2, Rec. ITU-T A.7).** This contribution does not reopen
+work already under way in ITU-T SG17 or in the Focus Group. It supplies a
+record-level vocabulary and check on top of the threads already published in the
+FG's GitHub space; where a thread already covers a point, this document defers to
+it. The Focus Group and the SG17 Chair remain the judges of whether any overlap
+exists, under ToR §2.
+
 ## 6. References and attribution
 
 - ITU-T FG-TIDA, Terms of Reference — public text at https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx (clauses §3.4, §4.2, §4.4 cited above).
-- ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, 5 October 2026 — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
+- ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, Geneva, 8 October 2026 — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
 - No public repository location is asserted; no run result is claimed.
 
 *No trademark, no DOI, no canonical identifier is asserted in this document. Views are those of the named individual expert and do not represent any organisation.*
@@ -103,7 +111,7 @@ Completeness condition, stated so a third party can apply it: a record fails if 
 
 Boundary sentence: *a record satisfying this condition is complete, not correct; completeness is not a certification, an endorsement, or a regulatory acceptance.*
 
-# Annex — act-content binding: the record must identify the act
+## Annex C — act-content binding: the record must identify the act
 
 The three-field record answers *who acted, on whose authority, and what
 changed*. One property is missing from that picture: the record can name the
@@ -139,7 +147,8 @@ differs between languages.
 ## Check
 
 A single-file, standard-library-only checker (`act_content_check.py`) is
-provided with this contribution. It ships with seven self-test vectors and
+provided in the contribution repository
+(https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026). It ships with seven self-test vectors and
 uses stable exit codes: 0 satisfied; 1 no binding object or an assignable UUID
 only; 2 substitution detected (missing field, class-level placeholder, digest
 mismatch); 3 value not canonicalizable (floating-point); 4 invalid JSON.
