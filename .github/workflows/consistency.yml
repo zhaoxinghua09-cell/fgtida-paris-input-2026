@@ -28,3 +28,20 @@ jobs:
           else
             echo "NEGATIVE CONTROL OK: corrupted manifest rejected"
           fi
+      - name: act_content_check self-test
+        run: |
+          cd tools
+          python act_content_check.py --selftest
+      - name: Negative control (tampered record must be rejected)
+        run: |
+          cd tools
+          python - <<'PY'
+          import json, subprocess, sys
+          rec = json.load(open('record.json'))
+          rec['effect']['operation'] = 'modified-after-signing'
+          json.dump(rec, open('/tmp/tampered.json', 'w'))
+          rc = subprocess.call([sys.executable, 'act_content_check.py', '/tmp/tampered.json'])
+          if rc == 0:
+              print('NEGATIVE CONTROL FAILED: tampered record accepted'); sys.exit(1)
+          print('NEGATIVE CONTROL OK: tampered record rejected (exit %d)' % rc)
+          PY
