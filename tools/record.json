@@ -1,0 +1,23 @@
+{
+  "record_id": "DEC-2026-1110-001",
+  "decided_at": "2026-11-10T10:00:00Z",
+  "outcome": "permit",
+  "consulted": {
+    "policy": "pol-42",
+    "version": "3"
+  },
+  "act": {
+    "action": "release-model",
+    "resource": "model:fraud-v3",
+    "parameters": {
+      "region": "eu",
+      "threshold": "0.82"
+    },
+    "principal": "org-a/agent-01",
+    "audience": "org-b"
+  },
+  "act_binding": {
+    "algorithm": "sha256",
+    "digest": "sha256:884db20b7b2ce338ef0da4983bdb4da3b837dc88fa1868bcf5a23f96fce7dfe8"
+  }
+}
