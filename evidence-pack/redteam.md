@@ -63,10 +63,12 @@
 
 | # | 件 | DOCX 字节 | SHA-256 | ToR |
 |---|---|---|---|---|
-| 1 | WG1/CDRA Registry–Evidence–Gates | 43,205 | `2c32d9c4…32073f` | §3.1/§4.1/§4.3 |
-| 2 | WG2/IBEA 门禁三字段 + act-content binding | 42,392 | `a229ae38…8d0e8` | §3.4/§4.2/§4.4 |
-| 3 | WG0/用例三件 | 43,434 | `ef3ba3d1…c2059` | §3.3/§4.1 |
+| 1 | WG1/CDRA Registry–Evidence–Gates | 43,490 | `cbf4232a…27a4d6` | §3.1/§4.1/§4.3 |
+| 2 | WG2/IBEA 门禁三字段 + act-content binding | 42,930 | `e41a5ae9…7c3a68` | §3.4/§4.2/§4.4 |
+| 3 | WG0/用例三件 | 43,908 | `9f58b9b1…6516f1` | §3.3/§4.1 |
 
 - 格式：**ITU-T Focus Group document template**（`Doc-FocusGroup_Document.docx`，46,499 B，sha256 `b81ae0c5…5aeb58`）。
 - 本包中单件（v1.0 act-content binding）的调研/回源/红队结论，对三件集**部分适用**：act-content binding 已并入 #2 的 Annex；三术语已并入 #1。
-- 三件的逐件差异见 `work/itu-paris-3items/manifest-3items.json`。
+- 三件的逐件差异见 仓根 `manifest-3items.json`。
+
+（附表已于 2026-11-10 晚刷新为公开仓 `docs/` 中交付版 docx 的实测指纹，仓 HEAD 5dd8b92；版本口径以 publish-manifest.json v1.2 (set) 为准。）
