@@ -10,7 +10,7 @@
 | Document ID | To be assigned by TSB |
 | Source | Xinghua Zhao, independent expert (China) |
 | Contact | zhaoxinghua07@126.com |
-| Date | 2026-11-10 (revision v0.3.1) |
+| Date | 2026-11-10 (revision v0.3.3) |
 | Related FG work | Terms of Reference §3.1 (Terminology and definitions), §4.1 (Use cases and requirements analysis), §4.3 (Trust framework(s) and lifecycle management) |
 | Pages | 5–6 (estimated; typeset length to be confirmed) |
 | IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
@@ -34,7 +34,7 @@ This contribution proposes no new technology and no new mandate. It proposes a *
 | Primitive | Working definition (proposed for the FG glossary) | What it makes possible |
 |---|---|---|
 | **Registry** | A queryable, versioned record of which actors, artefacts and decisions exist, with an identifier, an owner, a version and the basis on which registration was made (the basis is recorded, not verified by the check). | Any party can ask "does this actor exist, who owns it, which version is current" without bilateral agreements. |
-| **Evidence** | A record that a *specific action* occurred, carrying at minimum a source, a date (YYYY-MM-DD), and a stated attribution. | Claims can be checked after the fact instead of being taken on trust. |
+| **Evidence** | A record that a *specific action* occurred, carrying at minimum a source, a date (YYYY-MM-DD), and a stated attribution. | Records can be checked for completeness after the fact; whether the act occurred, or whether the attribution is authentic, is out of scope and requires a signature or other anchor. |
 | **Gates** | A defined transition point where a change requires a decision: trigger → assessment → authorisation → review, with machine-proposed and human-authorised steps recorded. | Evolution of an agent or a model becomes an auditable event rather than a silent update. |
 
 Three properties are intended and should be tested by the group:
@@ -51,9 +51,11 @@ Three readings this document is written to avoid: that it proposes a new work it
 - **Evidence, minimal case.** A consequential decision (a release, a refusal, an escalation) produces one evidence item carrying source, date, and a stated attribution. An auditor checks the item without accessing the actor's internal systems. Failure mode addressed: a claim that carries no traceable origin.
 - **Gates, minimal case.** A model or policy update is proposed; the transition is blocked until an assessment is recorded and a human authorisation exists; the release and the review are both logged. Failure mode addressed: an update that takes effect with no accountable decision.
 
+The formal use-case entries are submitted in the separate WG0 contribution; the three cases above are term-level examples, not a second set of entries.
+
 ## 3. Mapping to the Terms of Reference
 
-The framework is deliberately shaped to fit work already listed, rather than to propose new items. The mapping below uses the public Terms of Reference (https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx), and refers to clause numbers rather than to Annex A item identifiers.
+The framework is deliberately shaped to fit work already listed, rather than to propose new items. The mapping below uses the public Terms of Reference (https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx), and refers to clause numbers rather than to ToR Annex A item identifiers.
 
 | ToR clause | Kind of work | What this contribution supplies |
 |---|---|---|
@@ -81,6 +83,7 @@ FG's GitHub space; where a thread already covers a point, this document defers t
 it. The Focus Group and the SG17 Chair remain the judges of whether any overlap
 exists, under ToR §2.
 
+This input document formalizes the contribution recorded in the FG's GitHub space as themes#39 (with its archive thread themes#38); it does not reopen that thread, and the FG remains the judge of overlap under ToR §2.
 
 Further references, with permanent links:
 
@@ -94,8 +97,8 @@ Further references, with permanent links:
 
 - ITU-T FG-TIDA, Terms of Reference — public text at https://www.itu.int/en/ITU-T/focusgroups/tida/Pages/ToR.aspx (clauses §3.1, §3.3, §4.1, §4.3 cited above). The TIES-restricted document [295-PLEN] is cited by document number only and is not relied on for any quotation.
 - ITU-T FG-TIDA, Circular T25-TSB-CIR-0179, Geneva, 8 October 2026 (DMS Date 2026-10-05; posted 2026-10-19) — public text at https://www.itu.int/md/T25-TSB-CIR-0179/en. Its paragraph on contributions states the submission route and the 23 November 2026 deadline.
-- **An independent endpoint operator** — acknowledged for an exchange on endpoint-level evidence that informed the framing of Annex B. The operator is not named here and no validation result is claimed on its behalf.
-- Reproducible material: the three record-completeness checks in Annex A are specified at the level of field presence and field semantics; a formal schema is proposed as a next step. **No public repository location is asserted at the time of submission**; see Annex B.
+- **M. Barbosa, DEUSPROOF** (deusproof.com) — the author thanks DEUSPROOF for a worked state-at-date example with RFC 3161 and OpenTimestamps receipts and for pointing to the project's open-source verifier (https://github.com/deusproof/verifier), which the project describes as an offline verifier. The example informed the framing of Annex B. This acknowledgement is a source attribution only: it is not a validation of this contribution by DEUSPROOF, not an endorsement by the author of DEUSPROOF or its verifier, and not a recommendation of any product or provider. The author has no commercial relationship with DEUSPROOF. No validation result is claimed on DEUSPROOF's behalf.
+- Reproducible material: the three record-completeness checks in Annex A are specified at the level of field presence and field semantics; a formal schema is proposed as a next step. The public location of the contribution package is given in Annex B.
 
 *No trademark, no DOI, no canonical identifier is asserted in this document. Views are those of the named individual expert and do not represent any organisation.*
 
@@ -122,7 +125,7 @@ This document is submitted **for action**, no later than **23 November 2026**, i
 - `stated attribution` — a declared signer or source label carried with the item; it is recorded, not verified.
 - `required` — declared by the record itself (the `evidence.required` flag), not by an external policy document.
 
-A record exercising all three, in the form used for the checks described in Annex B:
+A record exercising all three, in the form used for the checks described in Annex A:
 
 ```json
 {"subject":{"identifier":"agent-01","identity":{"owner":"org-a","version":"1.2"}},
@@ -137,9 +140,8 @@ Boundary sentence, to be carried with every result: *a passing result means the 
 
 ## Annex B — Reproducibility and its current limit
 
-- The three checks in Annex A are specified above at the level of field presence and field semantics, so that an independent party can re-implement them without further material; the record format is the JSON example shown, and the exit-status convention is stated with it. The record format and exit-status convention are stated here; a runnable implementation of the checks accompanies the WG2 contribution (`tools/act_content_check.py`), and the public location is the contribution repository (https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026), tag `v1.2`.
-- **Known limitation, stated rather than hidden:** the record-completeness check does not verify signature authenticity, and no independent endpoint used during preparation is fixed to a permanent address. The result is therefore reproducible in method, not yet reproducible against a pinned endpoint.
-- The checks are specified at record level; the runnable implementation accompanies the WG2 contribution (tools/act_content_check.py).
+- The three checks in Annex A are specified above at the level of field presence and field semantics, so that an independent party can re-implement them from this document; the record format is the JSON example shown and the exit-status convention is stated with it. **No implementation of these three checks is provided in this package.** The WG2 contribution contains a checker for a different property (act-content binding) and is not an implementation of these checks. The public location of the contribution package is the contribution repository (https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026), tag v1.3.
+- **Known limitation, stated rather than hidden:** the record-completeness check does not verify signature authenticity, and the external worked example cited in §5 is published material, not a pinned endpoint for this document. The checks are specified so that a third party can re-implement them; no independent party has yet done so, and no validation is claimed.
 
 ## Annex C — terminology boundaries
 
@@ -159,7 +161,6 @@ glossary entry cannot be read as a technology commitment.
 - **No term is claimed as novel, adopted or agreed.** The labels are offered
   for the glossary only if the group finds them useful; naming and ownership
   stay with the existing threads.
-- **Checkability boundary:** the record-completeness check (Annex A of the
-  main text) verifies that required fields are present and internally
+- **Checkability boundary:** the record-completeness check (Annex A) verifies that required fields are present and internally
   consistent. It does not verify signature authenticity, and a passing result
   is not a certification.
