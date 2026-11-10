@@ -10,19 +10,20 @@
 | Document ID | To be assigned by TSB |
 | Source | Xinghua Zhao, independent expert (China) |
 | Contact | zhaoxinghua07@126.com |
-| Date | 2026-11-10 (revision v0.1.1) |
+| Date | 2026-11-10 (revision v0.1.3) |
 | Related FG work | Terms of Reference §3.3 (Use cases), §4.1 (Use cases and requirements analysis) |
 | Pages | 6–7 (estimated; typeset length to be confirmed) |
 | IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
 
-> Each proposal below follows the field structure of the FG's published use-case proposal template (
-the fields as listed below), so that the content can be re-entered in whatever register the Focus Group adopts without changing the substance. Fields the template requires are all completed; where a field does not apply, the reason is stated rather than left blank.
+> Each proposal below uses the field structure set out below, so that the content can be re-entered in whatever format the Focus Group adopts without changing the substance. At the time of writing, no publicly published FG use-case template or register was found; the fields below are therefore offered as a self-contained structure. Fields in that structure are all completed; where a field does not apply, the reason is stated rather than left blank.
 
 ## What is asked of the FG
 
-1. **Enter these three proposals in the use-case register**, one entry per proposal, attributed to this contribution.
+1. **Consider these three proposals for the FGs use-case work (ToR §3.3 / §4.1)**, one entry per proposal, attributed to this contribution.
 2. **Use them for requirements analysis under ToR §4.1**, since each yields five requirements already phrased as requirements rather than as narrative.
 3. **Indicate which theme each case should be mapped to**, where the group's theme taxonomy is settled; the primary theme is marked per proposal, and the others are marked as exercised.
+
+These proposals propose no new work item, no new mandate and no preferred technology.
 
 **On form:** every requirement below is stated as content, not as syntax. Each is expected to be satisfied by instantiating mechanisms that already exist — credentials, tokens, signed logs, status lists — rather than by defining a new data structure. Where a requirement needs a machine-readable form, that form is a candidate for the group's metadata work (ToR §4.4), not a proposal here.
 
@@ -33,7 +34,7 @@ the fields as listed below), so that the content can be re-entered in whatever r
 ## 1. Identification
 
 - **Title:** Delegated record read for an external lab referral
-- **Submitting organization:** Independent expert (China) — individual submission, no organisation represented
+- **Submitting organisation:** Independent expert (China) — individual submission, no organisation represented
 - **Contact name:** Xinghua Zhao
 - **Contact email:** zhaoxinghua07@126.com
 - **Sector:** Health *(primary)*; Other: cross-organisational clinical data exchange
@@ -78,7 +79,7 @@ the fields as listed below), so that the content can be re-entered in whatever r
 | Runtime Enforcement (Control Plane) | ✔ | | The boundary decision is made at the laboratory's intake. |
 | Embodied AI Identity and Trust | | | Not applicable — no physical actuation. |
 
-**Related theme proposals:** themes#42, themes#43, themes#59, themes#60 (see References).
+**Related theme proposals:** themes#42, themes#43, themes#59, themes#60 (see Further references, below).
 
 ## 5. Requirements
 
@@ -97,11 +98,11 @@ the fields as listed below), so that the content can be re-entered in whatever r
 
 
 **Non-duplication (ToR §2, Rec. ITU-T A.7).** This contribution does not reopen
-work already under way in ITU-T SG17 or in the Focus Group. It supplies a
-record-level vocabulary and check on top of the threads already published in the
-FG's GitHub space; where a thread already covers a point, this document defers to
-it. The Focus Group and the SG17 Chair remain the judges of whether any overlap
-exists, under ToR §2.
+work already under way in ITU-T SG17 or in the Focus Group. It supplies three
+use-case records written to the FG use-case template, on top of the threads
+already published in the FG's GitHub space; where a thread already covers a
+point, this document defers to it. The Focus Group and the SG17 Chair remain
+the judges of whether any overlap exists, under ToR §2.
 
 ## 7. Duplication check
 
@@ -111,7 +112,7 @@ exists, under ToR §2.
 ## 8. Maturity
 
 - **Pilot status:** Hypothetical.
-- **Reference implementation:** n/a.
+- **Reference implementation:** none offered.
 
 
 Further references, with permanent links:
@@ -139,7 +140,7 @@ Further references, with permanent links:
 ## 1. Identification
 
 - **Title:** Gated model update in a regulated device workflow
-- **Submitting organization:** Independent expert (China) — individual submission, no organisation represented
+- **Submitting organisation:** Independent expert (China) — individual submission, no organisation represented
 - **Contact name:** Xinghua Zhao
 - **Contact email:** zhaoxinghua07@126.com
 - **Sector:** Health *(primary)*; Other: regulated software lifecycle
@@ -184,7 +185,7 @@ Further references, with permanent links:
 | Runtime Enforcement (Control Plane) | ✔ | ✔ | The gate is the point where the change is held until conditions are met. |
 | Embodied AI Identity and Trust | | | Not applicable. |
 
-**Related theme proposals:** none linked at submission time.
+**Related theme proposals:** none from the GitHub theme threads at submission time; the FG theme taxonomy mapping is given in the table below.
 
 ## 5. Requirements
 
@@ -209,7 +210,7 @@ Further references, with permanent links:
 ## 8. Maturity
 
 - **Pilot status:** Hypothetical.
-- **Reference implementation:** n/a.
+- **Reference implementation:** none offered.
 
 ## 9. IP and confidentiality
 
@@ -228,7 +229,7 @@ Further references, with permanent links:
 ## 1. Identification
 
 - **Title:** Mid-session revocation of a roaming agent's authority
-- **Submitting organization:** Independent expert (China) — individual submission, no organisation represented
+- **Submitting organisation:** Independent expert (China) — individual submission, no organisation represented
 - **Contact name:** Xinghua Zhao
 - **Contact email:** zhaoxinghua07@126.com
 - **Sector:** Telecom *(primary)*
@@ -273,7 +274,7 @@ Further references, with permanent links:
 | Runtime Enforcement (Control Plane) | ✔ | | The visited network is the enforcement point. |
 | Embodied AI Identity and Trust | | | Not applicable. |
 
-**Related theme proposals:** none linked at submission time.
+**Related theme proposals:** none from the GitHub theme threads at submission time; the FG theme taxonomy mapping is given in the table below.
 
 ## 5. Requirements
 
@@ -298,7 +299,7 @@ Further references, with permanent links:
 ## 8. Maturity
 
 - **Pilot status:** Hypothetical.
-- **Reference implementation:** n/a.
+- **Reference implementation:** none offered.
 
 ## 9. IP and confidentiality
 
