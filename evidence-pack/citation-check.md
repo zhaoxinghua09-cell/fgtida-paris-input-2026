@@ -55,3 +55,16 @@
 - **#17 更新**：tida-datatracker.org 于 2026-11-10 晚在 Muse 席网络实测**可达**（站点与 /submit/ 路径可打开，注册为自助式）；作者报告其本地网络不可达。故 #17 原「fetch failed」为特定网络下的观测，不再记不成立，改为「可达性依网络而定」。
 - **#18 更新**：三件集公开仓已发布并可达（https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026 ，未登录可读），#18 由 NV 转**成立**。
 - 更新后汇总：成立 17 条；依网络而定 1 条（#17）；NV 0 条。
+
+
+## Addendum — 2026-11-11 (docx rebuild sync)
+
+The three shipped docx were rebuilt on 2026-11-10 to correct one stale
+header-table revision label per file (WG1 "(revision v0.3.1)" -> v0.3.3;
+WG2/WG0 "(revision v0.1.1)" -> v0.1.3). Extracted text of each rebuilt
+docx differs from the previous build in exactly that one line; all body
+text, and therefore every citation checked above, is unchanged. The
+citation-check tally stands as recorded. Rebuilt fingerprints:
+WG1 dd3a493693e13c924a58902269045a0dcc4cae6db2f1e1e8c85a7f1802207619;
+WG2 d5b2a6ef3e5cdfa14429d520c2592ffc392610848fdfffc4e680fa4f6dbd2c3f;
+WG0 6f7acd532ab02e4bccb00530705b84a9e21e0a68b44295f829c15bf100ba427f.

@@ -1,1 +1,67 @@
-{"channel":"Circular 179 §7: FG-TIDA GitHub page + ITU-T FG document template","channel_note":"FG's public How-to-Contribute page separately describes a TIDA DataTracker contribution form (tida-datatracker.org/submit/, sign-in gated, self-service registration; site verified reachable from the Muse seat's network on 2026-11-10, reported unreachable from the author's network). Whether the Paris meeting track uses the Circular 179 GitHub route, the DataTracker form, or both is not yet confirmed with the secretariat (tsbfgtida@itu.int); the author's filing decision is pending.","checkedAt":"2026-11-10T17:15:00+08:00","deadline":"2026-11-23","e3":{"note":"No independent third-party replication claimed.","status":"NV"},"gates":{"P1":"PASS","P10":"PASS","P11":"PASS","P12":"PASS","P13":"PASS","P2":"PASS","P3":"PASS","P4":"PASS","P5":"PASS","P6":"PASS","P7":"PASS","P8":"PASS","P9":"PASS"},"id":"itu-fg-tida-paris-3items-20261110","id_account":"zhaoxinghua09-cell","items":[{"bytes":43490,"docx":"docs/FG-TIDA-WG1-Cdra-InputDoc-v0.3.3.docx","id":"itu-wg1-cdra","sha256":"cbf4232a0637d41f25866ced7e5646421d5c56c84e709a9d74c4a6309a27a4d6"},{"bytes":42930,"docx":"docs/FG-TIDA-WG2-Ibea-InputDoc-v0.1.3.docx","id":"itu-wg2-ibea","sha256":"e41a5ae9a81c4f0ee7084305711e012b5dbf6b8c7ca6e643c98598394e4c2d68"},{"bytes":43908,"docx":"docs/FG-TIDA-WG0-UseCases-v0.1.3.docx","id":"itu-wg0-usecases","sha256":"9f58b9b1ef27e283930b0c6380cd2ff02b8ae92e145a0eafea72dc61a96516f1"}],"nv":["P13 human expert sign-off pending Steven's word-by-word confirmation","three items not yet submitted; no receipt yet","workbuddy handoff not received as of 2026-11-10 17:15 CST (unchanged since 2026-11-06 receipts)","external AI review covers item #1 source at v0.3.1 only; shipped v0.3.3 / v0.1.3 sources not externally reviewed; #2/#3 not externally reviewed","submission channel: Circular 179 §7 GitHub route vs DataTracker form — relationship unconfirmed, secretariat confirmation pending","manifest-3items.json source fingerprints (source_bytes/source_sha256) predate the shipped sources and do not match the repository's current sources; docx fingerprints in it do match. Regeneration is a build-side task at docx rebuild; not altered by this refresh."],"preregistration":"2026-11-20","refresh_note":"Refreshed 2026-11-10 (Muse seat): set version v1.0 -> v1.2; item fingerprints updated from the superseded v0.3.1-era builds to the shipped docs/ builds (SHA-256 recomputed from the repository at HEAD 5dd8b92); channel_note and nv entries updated. Gate results P1-P13 carried over unchanged from the 2026-11-10 13:10 check; this refresh re-verified fingerprints and public reachability only, it did not re-run the gates.","template":{"bytes":46499,"name":"ITU-T Focus Group document template","sha256":"b81ae0c5d8e612eab8197dce356f49cf78dcc396639e9b1148450f7bfb5aeb58","url":"https://www.itu.int/en/ITU-T/studygroups/Documents/Doc-FocusGroup_Document.docx"},"title":"Three ITU-T FG-TIDA Paris contributions (WG0/WG1/WG2)","url":"https://github.com/FG-TIDA/","version":"v1.2 (set)"}
+{
+ "channel": "Circular 179 §7: FG-TIDA GitHub page + ITU-T FG document template",
+ "channel_note": "Two official routes are on record: Circular 179 §7 (contributions via the FG's GitHub page) and the FG How-to-Contribute page's TIDA DataTracker form (tida-datatracker.org/submit/). The author's DataTracker account became ready on 2026-11-10 (welcome mail to the account's registered address), so the DataTracker route is unblocked account-side; the author reported the site unreachable from his own network on 2026-11-10. Whether the Paris track uses one route or both is still unconfirmed with the secretariat (tsbfgtida@itu.int); the filing itself remains the author's step.",
+ "checkedAt": "2026-11-11T11:30:00+08:00",
+ "deadline": "2026-11-23",
+ "e3": {
+  "note": "No independent third-party replication claimed.",
+  "status": "NV"
+ },
+ "gates": {
+  "P1": "PASS",
+  "P10": "PASS",
+  "P11": "PASS",
+  "P12": "PASS",
+  "P13": "PASS",
+  "P2": "PASS",
+  "P3": "PASS",
+  "P4": "PASS",
+  "P5": "PASS",
+  "P6": "PASS",
+  "P7": "PASS",
+  "P8": "PASS",
+  "P9": "PASS"
+ },
+ "id": "itu-fg-tida-paris-3items-20261110",
+ "id_account": "zhaoxinghua09-cell",
+ "items": [
+  {
+   "bytes": 43490,
+   "docx": "docs/FG-TIDA-WG1-Cdra-InputDoc-v0.3.3.docx",
+   "id": "itu-wg1-cdra",
+   "sha256": "dd3a493693e13c924a58902269045a0dcc4cae6db2f1e1e8c85a7f1802207619"
+  },
+  {
+   "bytes": 42930,
+   "docx": "docs/FG-TIDA-WG2-Ibea-InputDoc-v0.1.3.docx",
+   "id": "itu-wg2-ibea",
+   "sha256": "d5b2a6ef3e5cdfa14429d520c2592ffc392610848fdfffc4e680fa4f6dbd2c3f"
+  },
+  {
+   "bytes": 43908,
+   "docx": "docs/FG-TIDA-WG0-UseCases-v0.1.3.docx",
+   "id": "itu-wg0-usecases",
+   "sha256": "6f7acd532ab02e4bccb00530705b84a9e21e0a68b44295f829c15bf100ba427f"
+  }
+ ],
+ "nv": [
+  "P13 human expert sign-off pending Steven's word-by-word confirmation",
+  "three items not yet submitted; no receipt yet",
+  "workbuddy handoff not received as of 2026-11-10 17:15 CST (unchanged since 2026-11-06 receipts)",
+  "external AI review covers item #1 source at v0.3.1 only; shipped v0.3.3 / v0.1.3 sources not externally reviewed; #2/#3 not externally reviewed",
+  "submission channel: Circular 179 §7 GitHub route vs DataTracker form — relationship unconfirmed, secretariat confirmation pending",
+  "docs/ binaries still hold the pre-rebuild builds; the rebuilt docx (one stale header-table revision label corrected per file, byte sizes unchanged) are staged as base64 in docs-rebuilt/ and land in docs/ by decode or direct replacement"
+ ],
+ "preregistration": "2026-11-20",
+ "refresh_note": "Refreshed 2026-11-10 (Muse seat): set version v1.0 -> v1.2; item fingerprints updated from the superseded v0.3.1-era builds to the shipped docs/ builds (SHA-256 recomputed from the repository at HEAD 5dd8b92); channel_note and nv entries updated. Gate results P1-P13 carried over unchanged from the 2026-11-10 13:10 check; this refresh re-verified fingerprints and public reachability only, it did not re-run the gates.",
+ "template": {
+  "bytes": 46499,
+  "name": "ITU-T Focus Group document template",
+  "sha256": "b81ae0c5d8e612eab8197dce356f49cf78dcc396639e9b1148450f7bfb5aeb58",
+  "url": "https://www.itu.int/en/ITU-T/studygroups/Documents/Doc-FocusGroup_Document.docx"
+ },
+ "title": "Three ITU-T FG-TIDA Paris contributions (WG0/WG1/WG2)",
+ "url": "https://github.com/FG-TIDA/",
+ "version": "v1.2 (set)",
+ "rebuild_note": "Docx rebuild sync 2026-11-11 (Muse seat): the three shipped docx were surgically rebuilt on 2026-11-10 so each header-table revision label matches its corrected source (WG1 v0.3.1->v0.3.3 label; WG2/WG0 v0.1.1->v0.1.3 label); all other zip entries byte-identical, extracted text differs in exactly that one line per file. Item fingerprints in this manifest and in manifest-3items.json now point at the rebuilt docx; manifest-3items.json source fingerprints regenerated against the current sources (post label-fix commit 5dd8b92). Gate results P1-P13 unchanged; this sync re-verified fingerprints only."
+}
