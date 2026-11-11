@@ -1,26 +1,26 @@
 [
  {
   "id": "itu-wg1-cdra",
-  "docx": "work/itu-paris-3items\\itu-wg1-cdra\\FG-TIDA-WG1-Cdra-InputDoc-v0.3.3.docx",
-  "bytes": 43490,
-  "sha256": "dd3a493693e13c924a58902269045a0dcc4cae6db2f1e1e8c85a7f1802207619",
+  "docx": "work/itu-paris-3items\\itu-wg1-cdra\\FG-TIDA-WG1-Cdra-InputDoc-v0.3.4.docx",
+  "bytes": 43488,
+  "sha256": "47deb02b57cd9a85de2e9ad66172c72899e7568d91404eb840b61ecb8ed90c1e",
   "source_bytes": 16267,
-  "source_sha256": "4bddfd429b579fdac988205f1db6bcd7ee840bf246fb989d424545687153bb08"
+  "source_sha256": "94d7f03998078992bdcafa97b7b6a35b56fc33aba016aec38dd84d708267cf49"
  },
  {
   "id": "itu-wg2-ibea",
-  "docx": "work/itu-paris-3items\\itu-wg2-ibea\\FG-TIDA-WG2-Ibea-InputDoc-v0.1.3.docx",
-  "bytes": 42930,
-  "sha256": "d5b2a6ef3e5cdfa14429d520c2592ffc392610848fdfffc4e680fa4f6dbd2c3f",
+  "docx": "work/itu-paris-3items\\itu-wg2-ibea\\FG-TIDA-WG2-Ibea-InputDoc-v0.1.4.docx",
+  "bytes": 42929,
+  "sha256": "6c67b46f79f5847b4c87f7e7ecea2fa2d2b21a0a3ddd470521893f01377e1203",
   "source_bytes": 13681,
-  "source_sha256": "f4730864b7c84775bd36d4dc0473668aea7b0744aef1392d1b74a7448583e3a8"
+  "source_sha256": "1a07afbeb6acf0c1fac5fe66c77bd174b29c69547faf2f4a58cbb7e962307b6f"
  },
  {
   "id": "itu-wg0-usecases",
-  "docx": "work/itu-paris-3items\\itu-wg0-usecases\\FG-TIDA-WG0-UseCases-v0.1.3.docx",
-  "bytes": 43908,
-  "sha256": "6f7acd532ab02e4bccb00530705b84a9e21e0a68b44295f829c15bf100ba427f",
+  "docx": "work/itu-paris-3items\\itu-wg0-usecases\\FG-TIDA-WG0-UseCases-v0.1.4.docx",
+  "bytes": 43909,
+  "sha256": "2feaf85281a73ac13658c1ec56bbdcf7c68bac04aa671a6a54cd7959ab508afc",
   "source_bytes": 18341,
-  "source_sha256": "d34d6d0676ab6fa2711c61d0a7d969a350953d2e21d0c469eb6126365487177d"
+  "source_sha256": "d53fb185e7050ebb13f86fb81f534b57d9edbce64cf8abba429d1422b99b332f"
  }
 ]

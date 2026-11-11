@@ -9,8 +9,8 @@
 | Agenda item | To be allocated by the FG |
 | Document ID | To be assigned by TSB |
 | Source | Xinghua Zhao, independent expert (China) |
-| Contact | zhaoxinghua07@126.com |
-| Date | 2026-11-10 (revision v0.3.3) |
+| Contact | zhaoxinghua06@126.com |
+| Date | 2026-11-11 (revision v0.3.4) |
 | Related FG work | Terms of Reference §3.1 (Terminology and definitions), §4.1 (Use cases and requirements analysis), §4.3 (Trust framework(s) and lifecycle management) |
 | Pages | 5–6 (estimated; typeset length to be confirmed) |
 | IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |

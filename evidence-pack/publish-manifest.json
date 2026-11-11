@@ -1,7 +1,7 @@
 {
  "channel": "Circular 179 §7: FG-TIDA GitHub page + ITU-T FG document template",
- "channel_note": "Two official routes are on record: Circular 179 §7 (contributions via the FG's GitHub page) and the FG How-to-Contribute page's TIDA DataTracker form (tida-datatracker.org/submit/). The author's DataTracker account became ready on 2026-11-10 (welcome mail to the account's registered address), so the DataTracker route is unblocked account-side; the author reported the site unreachable from his own network on 2026-11-10. Whether the Paris track uses one route or both is still unconfirmed with the secretariat (tsbfgtida@itu.int); the filing itself remains the author's step.",
- "checkedAt": "2026-11-11T11:30:00+08:00",
+ "channel_note": "Chair's decision 2026-11-11: BOTH official routes are filed with identical information. DataTracker route filed 2026-11-11 by the muse seat on the chair's instruction (account zhaoxinghua06@126.com): public records fg-tida-contribution-3 (wg1), -4 (wg2), -5 (wg0), version 0.0, status Awaiting review — filed with the v0.3.3/v0.1.3 builds; the contact-correction revision (v0.3.4/v0.1.4) is being uploaded as new versions where the system allows. GitHub route (Circular 179 §7) is filed from the chair's side using the corrected pack (bridge outbox/20261111_02 §A as amended by 20261111_04 and the correction addendum).",
+ "checkedAt": "2026-11-11T12:10:00+08:00",
  "deadline": "2026-11-23",
  "e3": {
   "note": "No independent third-party replication claimed.",
@@ -26,22 +26,22 @@
  "id_account": "zhaoxinghua09-cell",
  "items": [
   {
-   "bytes": 43490,
-   "docx": "docs/FG-TIDA-WG1-Cdra-InputDoc-v0.3.3.docx",
+   "bytes": 43488,
+   "docx": "docs/FG-TIDA-WG1-Cdra-InputDoc-v0.3.4.docx",
    "id": "itu-wg1-cdra",
-   "sha256": "dd3a493693e13c924a58902269045a0dcc4cae6db2f1e1e8c85a7f1802207619"
+   "sha256": "47deb02b57cd9a85de2e9ad66172c72899e7568d91404eb840b61ecb8ed90c1e"
   },
   {
-   "bytes": 42930,
-   "docx": "docs/FG-TIDA-WG2-Ibea-InputDoc-v0.1.3.docx",
+   "bytes": 42929,
+   "docx": "docs/FG-TIDA-WG2-Ibea-InputDoc-v0.1.4.docx",
    "id": "itu-wg2-ibea",
-   "sha256": "d5b2a6ef3e5cdfa14429d520c2592ffc392610848fdfffc4e680fa4f6dbd2c3f"
+   "sha256": "6c67b46f79f5847b4c87f7e7ecea2fa2d2b21a0a3ddd470521893f01377e1203"
   },
   {
-   "bytes": 43908,
-   "docx": "docs/FG-TIDA-WG0-UseCases-v0.1.3.docx",
+   "bytes": 43909,
+   "docx": "docs/FG-TIDA-WG0-UseCases-v0.1.4.docx",
    "id": "itu-wg0-usecases",
-   "sha256": "6f7acd532ab02e4bccb00530705b84a9e21e0a68b44295f829c15bf100ba427f"
+   "sha256": "2feaf85281a73ac13658c1ec56bbdcf7c68bac04aa671a6a54cd7959ab508afc"
   }
  ],
  "nv": [
@@ -63,5 +63,5 @@
  "title": "Three ITU-T FG-TIDA Paris contributions (WG0/WG1/WG2)",
  "url": "https://github.com/FG-TIDA/",
  "version": "v1.2 (set)",
- "rebuild_note": "Docx rebuild sync 2026-11-11 (Muse seat): the three shipped docx were surgically rebuilt on 2026-11-10 so each header-table revision label matches its corrected source (WG1 v0.3.1->v0.3.3 label; WG2/WG0 v0.1.1->v0.1.3 label); all other zip entries byte-identical, extracted text differs in exactly that one line per file. Item fingerprints in this manifest and in manifest-3items.json now point at the rebuilt docx; manifest-3items.json source fingerprints regenerated against the current sources (post label-fix commit 5dd8b92). Gate results P1-P13 unchanged; this sync re-verified fingerprints only."
+ "rebuild_note": "Docx rebuild sync 2026-11-11 (Muse seat): the three shipped docx were surgically rebuilt on 2026-11-10 so each header-table revision label matches its corrected source (WG1 v0.3.1->v0.3.3 label; WG2/WG0 v0.1.1->v0.1.3 label); all other zip entries byte-identical, extracted text differs in exactly that one line per file. Item fingerprints in this manifest and in manifest-3items.json now point at the rebuilt docx; manifest-3items.json source fingerprints regenerated against the current sources (post label-fix commit 5dd8b92). Gate results P1-P13 unchanged; this sync re-verified fingerprints only. Correction revision 2026-11-11: the contributions' contact email was corrected to the author's ITU address zhaoxinghua06@126.com (the W3C address 07 had been used in error); revision labels bumped (WG1 v0.3.4, WG2 v0.1.4, WG0 v0.1.4), dates 2026-11-11. Extracted-text diff vs the filed builds: only the contact and date/revision lines differ."
 }

@@ -9,8 +9,8 @@
 | Agenda item | To be allocated by the FG |
 | Document ID | To be assigned by TSB |
 | Source | Xinghua Zhao, independent expert (China) |
-| Contact | zhaoxinghua07@126.com |
-| Date | 2026-11-10 (revision v0.1.3) |
+| Contact | zhaoxinghua06@126.com |
+| Date | 2026-11-11 (revision v0.1.4) |
 | Related FG work | Terms of Reference §3.3 (Use cases), §4.1 (Use cases and requirements analysis) |
 | Pages | 6–7 (estimated; typeset length to be confirmed) |
 | IPR | The author asserts no IPR claim over this contribution; it is offered for the Focus Group's use under the ITU-T A.7 / ITU common patent policy. |
@@ -35,7 +35,7 @@ the fields as listed below), so that the content can be re-entered in whatever r
 - **Title:** Delegated record read for an external lab referral
 - **Submitting organization:** Independent expert (China) — individual submission, no organisation represented
 - **Contact name:** Xinghua Zhao
-- **Contact email:** zhaoxinghua07@126.com
+- **Contact email:** zhaoxinghua06@126.com
 - **Sector:** Health *(primary)*; Other: cross-organisational clinical data exchange
 
 ## 2. The situation
@@ -141,7 +141,7 @@ Further references, with permanent links:
 - **Title:** Gated model update in a regulated device workflow
 - **Submitting organization:** Independent expert (China) — individual submission, no organisation represented
 - **Contact name:** Xinghua Zhao
-- **Contact email:** zhaoxinghua07@126.com
+- **Contact email:** zhaoxinghua06@126.com
 - **Sector:** Health *(primary)*; Other: regulated software lifecycle
 
 ## 2. The situation
@@ -230,7 +230,7 @@ Further references, with permanent links:
 - **Title:** Mid-session revocation of a roaming agent's authority
 - **Submitting organization:** Independent expert (China) — individual submission, no organisation represented
 - **Contact name:** Xinghua Zhao
-- **Contact email:** zhaoxinghua07@126.com
+- **Contact email:** zhaoxinghua06@126.com
 - **Sector:** Telecom *(primary)*
 
 ## 2. The situation
