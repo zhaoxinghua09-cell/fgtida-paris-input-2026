@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """Act-content binding check (minimal, dependency-free).
 
@@ -9,6 +9,10 @@ A decision record satisfies "act-content binding" iff:
   2. it carries a digest recomputed from those fields under the stated
      byte rule, and the digest matches a recomputation;
   3. an assignable label alone (e.g. a random UUID) is not accepted as binding.
+
+Load rules: duplicate object keys are rejected (exit 4) and a UTF-8 BOM is
+tolerated, so the record a human reads is the record that is checked. The
+placeholder comparison folds Unicode confusables before matching.
 
 Precondition (stated in the document, not enforced here): the binding value is
 fixed at decision time and the record is protected (signed, or held in an
@@ -33,6 +37,7 @@ Usage
 import hashlib
 import json
 import sys
+import unicodedata
 
 ACT_FIELDS = ["action", "resource", "parameters", "principal", "audience"]
 PLACEHOLDERS = {"*", "any", "all", "default", "tbd", "n/a", "none"}
@@ -48,8 +53,21 @@ def has_float(value):
     return False
 
 
+_CONFUSABLES = str.maketrans({
+    "\u0430": "a", "\u0435": "e", "\u043e": "o", "\u0440": "p",
+    "\u0441": "c", "\u0445": "x", "\u0443": "y", "\u0456": "i",
+    "\u03bf": "o", "\u03b1": "a", "\u03b5": "e",
+})
+
+
+def _fold(text):
+    """NFKC + confusable fold, so a placeholder cannot hide behind look-alike
+    characters (e.g. Cyrillic \u0430 in 'any') or fullwidth forms."""
+    return unicodedata.normalize("NFKC", text).translate(_CONFUSABLES)
+
+
 def _placeholder_token(text):
-    t = text.strip().lower()
+    t = _fold(text.strip().lower())
     if t in PLACEHOLDERS:
         return True
     for sep in (":", "/", "#", "@"):
@@ -184,6 +202,17 @@ def selftest():
     return 0 if failures == 0 else 1
 
 
+def _reject_duplicate_keys(pairs):
+    """Byte-rule hygiene: a record with duplicate keys is ambiguous — a human
+    reader and a parser can see different acts. Reject at load (exit 4)."""
+    obj = {}
+    for key, value in pairs:
+        if key in obj:
+            raise ValueError("duplicate key in record: %r" % key)
+        obj[key] = value
+    return obj
+
+
 def main():
     if len(sys.argv) != 2:
         print(__doc__)
@@ -191,7 +220,8 @@ def main():
     if sys.argv[1] == "--selftest":
         return selftest()
     try:
-        record = json.load(open(sys.argv[1], encoding="utf-8"))
+        with open(sys.argv[1], encoding="utf-8-sig") as fh:
+            record = json.load(fh, object_pairs_hook=_reject_duplicate_keys)
     except Exception as exc:  # noqa: BLE001
         print("invalid JSON: %s" % exc)
         return 4
