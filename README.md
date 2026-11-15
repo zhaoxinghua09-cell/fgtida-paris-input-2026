@@ -27,13 +27,23 @@ The WG2 contribution ships a dependency-free checker (Python standard library
 only) for the act-content binding its record format defines:
 
 ```
-python3 tools/act_content_check.py tools/record.json   # exit=0, binding satisfied
-python3 tools/act_content_check.py --selftest          # 7 vectors, SELFTEST OK
+python tools/act_content_check.py tools/record.json    # exit=0, binding satisfied
+python tools/act_content_check.py --selftest           # 7 vectors, SELFTEST OK
 ```
+
+Any Python 3 interpreter works; use `python3` instead of `python` on systems
+that do not provide a `python` alias.
 
 Expected output: see `tools/expected-output.txt`. The WG1 contribution's
 Annex A states the record-completeness conditions (Registry, Evidence, Gates)
 that this checker operationalises for the gate record.
+
+**Which version is authoritative**: `main` is the authoritative branch. Tag
+`v1.2` (7d82f5d, 2026-11-11) is the corrected-build revision; `main` carries
+further red-team fixes committed after that tag, so `main` is never behind it.
+The earlier `fix/version-consistency` pull request was closed on 2026-11-15
+rather than merged: it conflicted and still carried the superseded
+v0.3.3 / v0.1.3 binaries.
 
 Fingerprints: see `manifest-3items.json`. Evidence pack: `evidence-pack/`.
 
