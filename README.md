@@ -51,3 +51,8 @@ Submission channels (dual route, identical information): (1) TIDA DataTracker �
 filed 2026-11-11, records fg-tida-contribution-3 (WG1), -4 (WG2), -5 (WG0);
 (2) TSB Circular 179, paragraph on contributions (FG GitHub space, ITU-T FG
 contribution template) — filing in preparation with the corrected builds only.
+
+The DataTracker record numbers above are internal reconciliation references for
+the author and the ITU secretariat; they do not resolve to a public page. Public
+verification of what was filed is this repository — tag `v1.2.1` (or later) and
+the hashes in `manifest-3items.json`.
