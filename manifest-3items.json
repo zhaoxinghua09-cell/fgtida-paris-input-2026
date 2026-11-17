@@ -1,28 +1,34 @@
 [
  {
   "id": "itu-wg1-cdra",
-  "docx": "docs/FG-TIDA-WG1-Cdra-InputDoc-v0.3.4.docx",
-  "staged_b64": "docs-rebuilt/FG-TIDA-WG1-Cdra-InputDoc-v0.3.4.docx.b64",
-  "bytes": 43488,
-  "sha256": "47deb02b57cd9a85de2e9ad66172c72899e7568d91404eb840b61ecb8ed90c1e",
+  "docx": "docs/FG-TIDA-WG1-Cdra-InputDoc-v0.4.docx",
+  "staged_b64": "docs-rebuilt/FG-TIDA-WG1-Cdra-InputDoc-v0.4.docx.b64",
+  "bytes": 43487,
+  "sha256": "0fab8fe358d051e4aa9a750de548036b470ac954f99b297482a6486b3ec8b0b7",
+  "version": "v0.4",
+  "supersedes": "docs/FG-TIDA-WG1-Cdra-InputDoc-v0.3.4.docx",
   "source_bytes": 16267,
   "source_sha256": "94d7f03998078992bdcafa97b7b6a35b56fc33aba016aec38dd84d708267cf49"
  },
  {
   "id": "itu-wg2-ibea",
-  "docx": "docs/FG-TIDA-WG2-Ibea-InputDoc-v0.1.4.docx",
-  "staged_b64": "docs-rebuilt/FG-TIDA-WG2-Ibea-InputDoc-v0.1.4.docx.b64",
-  "bytes": 42929,
-  "sha256": "6c67b46f79f5847b4c87f7e7ecea2fa2d2b21a0a3ddd470521893f01377e1203",
+  "docx": "docs/FG-TIDA-WG2-Ibea-InputDoc-v0.2.docx",
+  "staged_b64": "docs-rebuilt/FG-TIDA-WG2-Ibea-InputDoc-v0.2.docx.b64",
+  "bytes": 42927,
+  "sha256": "c9c6586dadf1a02e1a2aa577eabbff43a7cc54470c8f2fb38b65d60dab5bc6ac",
+  "version": "v0.2",
+  "supersedes": "docs/FG-TIDA-WG2-Ibea-InputDoc-v0.1.4.docx",
   "source_bytes": 13681,
   "source_sha256": "1a07afbeb6acf0c1fac5fe66c77bd174b29c69547faf2f4a58cbb7e962307b6f"
  },
  {
   "id": "itu-wg0-usecases",
-  "docx": "docs/FG-TIDA-WG0-UseCases-v0.1.4.docx",
-  "staged_b64": "docs-rebuilt/FG-TIDA-WG0-UseCases-v0.1.4.docx.b64",
-  "bytes": 43909,
-  "sha256": "2feaf85281a73ac13658c1ec56bbdcf7c68bac04aa671a6a54cd7959ab508afc",
+  "docx": "docs/FG-TIDA-WG0-UseCases-v0.2.docx",
+  "staged_b64": "docs-rebuilt/FG-TIDA-WG0-UseCases-v0.2.docx.b64",
+  "bytes": 43907,
+  "sha256": "497be91d179e50951f1875202f904b5d8d13a03f607f088345c931e9b16cdc2f",
+  "version": "v0.2",
+  "supersedes": "docs/FG-TIDA-WG0-UseCases-v0.1.4.docx",
   "source_bytes": 18341,
   "source_sha256": "d53fb185e7050ebb13f86fb81f534b57d9edbce64cf8abba429d1422b99b332f"
  }
