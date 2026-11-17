@@ -24,7 +24,10 @@ the binaries.
 ## Formats
 
 Three forms of each contribution are in this repository. They are not three
-different documents; they are the same text in three containers.
+different documents; they are the same body text in three containers. The
+`.docx` additionally carries the FG template's header, footer and revision
+block, so the files are not byte-identical and this section does not say
+they are.
 
 | Form | Location | What it is for |
 |---|---|---|
@@ -35,21 +38,29 @@ different documents; they are the same text in three containers.
 ITU's guidance for Focus Group contributions marks `.docx` as discouraged and
 names plain text or reStructuredText instead. The `.rst` files were generated on
 2026-11-17 from `sources/` by `tools/md2rst.py`, which is in this repository so
-that anyone can regenerate them. Each was parsed with docutils 0.21.2 before
-being committed: **zero errors or warnings, and all 64 headings plus every
-inline identifier and every code token from the Markdown are present in the
-parsed output.** That check is a content-preservation check, not a claim that the
-Markdown and the .docx are identical - the .docx carries the FG template's
-header, footer and revision block, which the plain-text forms do not.
+that anyone can regenerate them. Two separate checks were run before
+committing, and they are not the same check.
+
+**Check 1 - it parses.** `docutils 0.21.2` reports no errors and no warnings when
+parsing each file. This is a parser result and nothing more: docutils is a lenient
+parser, its silence is not a certificate of conformance to the reStructuredText
+specification, and this section does not treat it as one.
+
+**Check 2 - the content survived.** A comparison, not the parse, took every heading
+in the Markdown (64 across the three files), every inline identifier (30) and every
+code token (49) and looked for each one in the text of the parsed output. All were
+present. That is the check that makes `sources-rst/` the same body text as
+`sources/`, and check 1 does not imply it.
 
 **If a document has to change, edit `sources/` and regenerate; do not hand-edit
 `sources-rst/`.** Hand-editing the generated form is how the two containers drift
 apart, and this repository has already had three document generations drift once
 (see `docs-rebuilt/README.md`).
 
-This paragraph does not claim format compliance. It states what exists and what
-was verified about it. Whether plain text satisfies a particular submission
-channel is a question for that channel.
+This section does not claim format compliance, and it does not claim conformance
+to the reStructuredText specification. It reports a parser result and a content
+comparison. Whether either satisfies a submission channel is a question for that
+channel.
 
 ## Run the checks
 
