@@ -1,0 +1,80 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "orcid": {
+      "@id": "https://schema.org/identifier",
+      "@type": "@id"
+    }
+  },
+  "@type": "CreativeWork",
+  "@id": "https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026#metadata",
+  "name": "FG-TIDA Paris input package (working drafts)",
+  "description": "Working drafts of material intended for input to ITU-T FG-TIDA. Not adopted by any standards body. Not submitted. Cite a specific file at a specific commit, and state that it is a draft.",
+  "version": "v1.2",
+  "datePublished": "2026-11-17",
+  "dateModified": "2026-11-17",
+  "creativeWorkStatus": "Draft",
+  "license": "https://opensource.org/licenses/MIT",
+  "author": {
+    "@type": "Person",
+    "name": "Xinghua Zhao",
+    "identifier": "https://orcid.org/0009-0001-0512-1237",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Independent researcher"
+    }
+  },
+  "isBasedOn": {
+    "@id": "https://doi.org/10.5281/zenodo.22456647"
+  },
+  "keywords": [
+    "ITU-T FG-TIDA",
+    "working draft",
+    "trust lifecycle",
+    "runtime verification"
+  ],
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "name": "README.md",
+      "description": "Repository purpose, scope and what each file is for",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "WG-ONBOARDING.md",
+      "description": "How a new participant reaches the point of being able to submit",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "CONTRIBUTING.md",
+      "description": "Contribution mechanics and the rules this material follows",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "RIGHTS.md",
+      "description": "Rights and licensing statement for the material in this repository",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "CHANGELOG.md",
+      "description": "Change history of this repository's contents",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "manifest-3items.json",
+      "description": "Machine-readable manifest of the three document items in this package",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "preview.ps1",
+      "description": "Helper script for previewing the package locally",
+      "encodingFormat": "text/plain"
+    }
+  ]
+}

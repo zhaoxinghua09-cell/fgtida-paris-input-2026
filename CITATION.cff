@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: >-
+  This repository holds working drafts, not adopted or submitted material.
+  When citing, name a specific file at a specific commit of this repository,
+  and state that the material is a draft.
+title: "FG-TIDA Paris input package (working drafts)"
+version: "v1.2"
+date-released: "2026-11-17"
+license: MIT
+type: generic
+authors:
+  - family-names: "Zhao"
+    given-names: "Xinghua"
+    orcid: "0009-0001-0512-1237"
+repository-code: "https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026"
+url: "https://github.com/zhaoxinghua09-cell/fgtida-paris-input-2026"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22456647"
+    description: "Theory record in Zenodo. This is not the DOI of these drafts."
+keywords:
+  - "ITU-T FG-TIDA"
+  - "working draft"
+  - "trust lifecycle"
+  - "runtime verification"
