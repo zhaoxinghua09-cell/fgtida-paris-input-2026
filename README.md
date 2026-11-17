@@ -21,6 +21,36 @@ The corrected builds are staged under `docs-rebuilt/` as base64 with hashes in
 the manifests (see `docs-rebuilt/README.md`); decode them over `docs/` to land
 the binaries.
 
+## Formats
+
+Three forms of each contribution are in this repository. They are not three
+different documents; they are the same text in three containers.
+
+| Form | Location | What it is for |
+|---|---|---|
+| `.docx` | `docs/` | the form submitted, built in the ITU-T Focus Group document template |
+| Markdown | `sources/` | the text the documents were built from; edit here |
+| reStructuredText | `sources-rst/` | plain-text markup in the form ITU guidance names |
+
+ITU's guidance for Focus Group contributions marks `.docx` as discouraged and
+names plain text or reStructuredText instead. The `.rst` files were generated on
+2026-11-17 from `sources/` by `tools/md2rst.py`, which is in this repository so
+that anyone can regenerate them. Each was parsed with docutils 0.21.2 before
+being committed: **zero errors or warnings, and all 64 headings plus every
+inline identifier and every code token from the Markdown are present in the
+parsed output.** That check is a content-preservation check, not a claim that the
+Markdown and the .docx are identical - the .docx carries the FG template's
+header, footer and revision block, which the plain-text forms do not.
+
+**If a document has to change, edit `sources/` and regenerate; do not hand-edit
+`sources-rst/`.** Hand-editing the generated form is how the two containers drift
+apart, and this repository has already had three document generations drift once
+(see `docs-rebuilt/README.md`).
+
+This paragraph does not claim format compliance. It states what exists and what
+was verified about it. Whether plain text satisfies a particular submission
+channel is a question for that channel.
+
 ## Run the checks
 
 The WG2 contribution ships a dependency-free checker (Python standard library
