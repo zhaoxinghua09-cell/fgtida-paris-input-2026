@@ -24,10 +24,12 @@ the binaries.
 ## Formats
 
 Three forms of each contribution are in this repository. They are not three
-different documents; they are the same body text in three containers. The
-`.docx` additionally carries the FG template's header, footer and revision
-block, so the files are not byte-identical and this section does not say
-they are.
+different documents. They are meant to carry the same body text in three
+containers. The `.docx` additionally carries the FG template's header, footer
+and revision block, so the files are not byte-identical and this section does
+not say they are. The checks below measure the `sources/` to `sources-rst/`
+pair only; they do not measure the `.docx`, which was built from `sources/` and
+is fingerprinted separately in `manifest-3items.json`.
 
 | Form | Location | What it is for |
 |---|---|---|
@@ -49,8 +51,10 @@ specification, and this section does not treat it as one.
 **Check 2 - the content survived.** A comparison, not the parse, took every heading
 in the Markdown (64 across the three files), every inline identifier (30) and every
 code token (49) and looked for each one in the text of the parsed output. All were
-present. That is the check that makes `sources-rst/` the same body text as
-`sources/`, and check 1 does not imply it.
+present. That establishes that the converted text still carries every heading,
+identifier and code token the source had. It is a **presence check, not a
+character-level comparison**: it does not prove the two files contain identical
+words, only that nothing structural went missing. Check 1 does not imply it.
 
 **If a document has to change, edit `sources/` and regenerate; do not hand-edit
 `sources-rst/`.** Hand-editing the generated form is how the two containers drift
