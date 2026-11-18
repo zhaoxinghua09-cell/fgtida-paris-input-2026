@@ -7,7 +7,7 @@
 | 级 | 结果 | 证据位置 | 说明 |
 |---|---|---|---|
 | L1 自我复现 | **有** | `docs-rebuilt/*.docx.b64`、`sources-rst/*.rst`、`preview.ps1`、`requirements.txt`、`.github/workflows/docs.yml` | 三份 .docx 由 rst 源重建，任何人可跑生成链复核 |
-| L2 异体审查 | **有限** | `evidence-pack/external-ai-review.md`、`evidence-pack/redteam.md`、`evidence-pack/citation-check.md` | 有外部 AI 评审与红队记录；**评审者型号/版本/时间是否写明决定它算 L2 还是自述**，需逐份核对后再升级 |
+| L2 异体审查 | **有限（已取证）** | `evidence-pack/external-ai-review.md` | 2026-11-18 核对：回执写明外部 AI 为 **qwen-plus**、零先验上下文、回执时间 2026-11-10、含三条具体发现（identifier 未定义 / 缺 Schema / 域名暗示背书）与逐条处置，**且自陈只覆盖 #1（WG1/CDRA），#2 #3 记为 NV 不以 #1 代签**。这是真实外部 AI 二审核对，范围诚实——但**是 AI 审 AI，不是人类同行评审**，故此级封顶"有限" |
 | L3 第二实现 | **0** | — | 无第二实现（文档类不适用，记 0） |
 | L3.5 外部语料 | **0** | — | 无外部机构对本件的正式引用 |
 | L4 外部节点 | **0** | `evidence/account-table.md`、Datatracker 提交流程记录 | 已按 ITU 流程提交，但**尚未进入会议议程/未获回执**，不计 L4 |
