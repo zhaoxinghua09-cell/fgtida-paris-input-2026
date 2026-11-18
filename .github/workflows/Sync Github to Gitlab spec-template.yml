@@ -22,7 +22,7 @@ jobs:
     steps:
 
       - name: Checkout complete repository
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           fetch-depth: 0
           fetch-tags: true
@@ -32,42 +32,38 @@ jobs:
           git config user.name "GitHub-GitLab Sync Bot"
           git config user.email "github-gitlab-sync-bot@users.noreply.github.com"
 
-      - name: Validate GitLab configuration
+      # The mirror is optional infrastructure. When the two secrets below are absent,
+      # say so plainly and skip the mirror instead of failing a push that has nothing
+      # to do with GitLab. Set GITLAB_TOKEN and GITLAB_REPO_URL_SPECTEMPLATE to enable.
+      - name: Check GitLab configuration
+        id: cfg
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
           GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL_SPECTEMPLATE }}
         run: |
-          if [ -z "$GITLAB_TOKEN" ]; then
-            echo "ERROR: GITLAB_TOKEN is not configured."
-            exit 1
+          if [ -n "$GITLAB_TOKEN" ] && [ -n "$GITLAB_REPO_URL" ]; then
+            echo "present=yes" >> "$GITHUB_OUTPUT"
+            echo "GitLab mirror: configured, mirroring."
+          else
+            echo "present=no" >> "$GITHUB_OUTPUT"
+            echo "::notice title=GitLab mirror skipped::GITLAB_TOKEN and/or GITLAB_REPO_URL_SPECTEMPLATE are not set, so nothing is mirrored. This is not a failure of the contribution."
           fi
-
-          if [ -z "$GITLAB_REPO_URL" ]; then
-            echo "ERROR: GITLAB_REPO_URL_SPECTEMPLATE is not configured."
-            exit 1
-          fi
-
-          echo "GitLab repository URL is configured."
 
       - name: Add GitLab remote
+        if: steps.cfg.outputs.present == 'yes'
         env:
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
           GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL_SPECTEMPLATE }}
         run: |
           GITLAB_HOST="${GITLAB_REPO_URL#https://}"
-
           git remote add gitlab \
             "https://oauth2:${GITLAB_TOKEN}@${GITLAB_HOST}"
-
           echo "GitLab remote configured."
 
       - name: Synchronize branches
-        run: |
-          git push gitlab \
-            'refs/heads/*:refs/heads/*'
+        if: steps.cfg.outputs.present == 'yes'
+        run: git push gitlab "refs/heads/*:refs/heads/*"
 
       - name: Synchronize tags
-        run: |
-          git push gitlab \
-            'refs/tags/*:refs/tags/*'
-
+        if: steps.cfg.outputs.present == 'yes'
+        run: git push gitlab "refs/tags/*:refs/tags/*"
